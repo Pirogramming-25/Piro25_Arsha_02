@@ -1,0 +1,77 @@
+/* =========================================================
+   style.css  —  공통 (변수 · 리셋 · 기본 스타일)
+   ⚠️ 이 파일은 공통이라 한 명이 관리. 각자 섹션 스타일은 자기 css 파일에!
+   ========================================================= */
+
+/* ---------- 공통 변수 ---------- */
+:root {
+  --accent: #47b2e4;      /* 메인 파란색 */
+  --dark: #37423b;        /* 진한 텍스트 */
+  --gray: #5e5e5e;        /* 본문 회색 */
+  --bg-light: #f6f9fe;    /* 연한 배경 */
+  --white: #ffffff;
+  --font-body: "Open Sans", sans-serif;
+  --font-heading: "Raleway", sans-serif;
+}
+
+/* ---------- 리셋 ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+input, textarea {
+  font: inherit;
+}
+
+/* ---------- 기본 ---------- */
+body {
+  font-family: var(--font-body);
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+/* ---------- 공통 레이아웃 유틸 ---------- */
+/* 가운데 정렬 + 최대 너비 (모든 섹션 안쪽에 .container 사용) */
+.container {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 각 섹션 위아래 여백 (Header/Hero/Footer 제외) */
+.section {
+  padding: 60px 0;
+}
+
+/* 반응형 기준점 (참고용 — 각 섹션 css에서 media query 사용) */
+/* @media (max-width: 1024px) { ... } 태블릿 */
+/* @media (max-width: 768px)  { ... } 모바일 */
