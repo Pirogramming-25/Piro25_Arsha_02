@@ -1,2 +1,86 @@
 /* faq.css  —  담당: 강보민 */
 /* 이 파일에만 작성하세요. 공통 변수는 var(--accent) 처럼 사용 */
+#faq {
+    background-color: var(--bg-light);
+}
+
+#faq .container .section-title{
+    text-align: center;
+    padding-bottom: 60px;
+}
+
+#faq .container .section-title h2{
+    background-color: red;
+
+    color: var(--dark);
+    font-size: 32px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid green;
+}
+
+#faq .container .section-title p{
+    color: var(--gray);
+}
+
+#faq .container .faq-list{
+    background-color: yellow;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    gap: 20px;
+
+    padding: 12px;
+}
+
+#faq .container .faq-list .faq-item{
+    background-color: var(--white);
+
+    padding: 20px;
+
+}
+
+#faq .container .faq-list .faq-item .question{
+    display: flex;
+    flex-direction: row;
+    align-items:first baseline;
+    gap: 10px;
+}
+
+#faq .container .faq-list .faq-item .question .question-mark{
+    border: 0.1rem solid var(--accent);
+    border-radius: 50%;
+    color: var(--accent);
+
+    width: 22px;
+    height: 22px;
+    font-size: 15px;
+    font-weight: 700;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    
+}
+
+#faq .container .faq-list .faq-item .question .question-mark::before{
+    content: '?';
+}
+
+
+#faq .container .faq-list .faq-item .question .question-text{
+    flex: 1;
+    text-align: start;
+    font-size: 18px;
+    font-weight: 600;
+}
+#faq .container .faq-list .faq-item .question .arrow{
+    flex-shrink: 0;
+    margin-left: auto;
+    font-size: 20px;
+}
+#faq .container .faq-list .faq-item .answer{
+    display: none;
+}
