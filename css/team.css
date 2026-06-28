@@ -46,6 +46,7 @@
   border-radius: 8px;
   padding: 1.5rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
 .team-card img {
@@ -60,7 +61,7 @@
 .team-info h4 {
   font-size: 1.1rem;
   font-weight: 700;
-  color: var(--accent);
+  color: #37517E;
   margin-bottom: 0.2rem;
 }
 
@@ -101,5 +102,31 @@
   background: var(--accent);
   border-color: var(--accent);
   color: var(--white);
+}
+
+/* ===== 호버 효과 ===== */
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* ===== 반응형 ===== */
+@media (max-width: 768px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .team-social {
+    justify-content: center;
+  }
+
+  .team-info span {
+    text-align: center;
+  }
 }
 
