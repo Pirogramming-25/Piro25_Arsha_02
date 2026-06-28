@@ -1,3 +1,86 @@
 /* subscribe.css  —  담당: 강보민 */
 /* 이 파일에만 작성하세요. 공통 변수는 var(--accent) 처럼 사용 */
 
+#subscribe{
+    background-color: var(--white);
+}
+#subscribe .container{
+    background-color: var(--bg-light);
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 80px;
+    padding-bottom: 0;
+    border-radius: 15px;
+}
+#subscribe .container .subscribe-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+#subscribe .container .subscribe-content .subscribe-text{
+    flex: 0 0 55%;
+
+}
+#subscribe .container .subscribe-content .subscribe-text h2{
+    
+    color: var(--dark);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 1rem;
+}
+#subscribe .container .subscribe-content .subscribe-text p{
+    color: var(--gray);
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+#subscribe .container .subscribe-content .subscribe-text form{
+    margin-top: 1.875rem;
+    background: var(--white);
+    padding: 6px 10px;
+    position: relative;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--accent);
+}
+#subscribe .container .subscribe-content .subscribe-text form input[type='email']{
+    background-color: var(--white);
+    border: 0;
+    padding: 4px 8px;
+    width: calc(100% - 110px);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    background: transparent;
+}
+#subscribe .container .subscribe-content .subscribe-text form button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0 1.25rem;
+    background: var(--accent);
+    color: var(--white);
+    border-radius: 0 50px 50px 0;
+    cursor: pointer;
+}
+#subscribe .container .subscribe-content .subscribe-img{
+    flex: 0 0 38%;
+    text-align: right;
+}
+#subscribe .container .subscribe-content .subscribe-img img{
+    max-width: 100%;
+    height: 362.3px;
+}
