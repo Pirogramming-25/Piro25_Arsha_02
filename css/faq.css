@@ -4,6 +4,10 @@
     background-color: var(--bg-light);
 }
 
+#faq {
+    width: 100%;
+}
+
 #faq .container .section-title{
     text-align: center;
     padding-bottom: 60px;
@@ -159,8 +163,12 @@
     #faq .container {
         max-width: 540px;
     }
+    #faq .container .section-title h2{
+        max-width: 90%;
+    }
+
     #faq .container .faq-list .faq-item {
-        padding: 15px;
+        padding: 20px;
     }
 }
 
