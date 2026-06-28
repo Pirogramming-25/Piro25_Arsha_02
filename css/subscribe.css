@@ -18,10 +18,10 @@
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
-    padding: 0 12px;
 }
 #subscribe .container .subscribe-content .subscribe-text{
-    flex: 0 0 55%;
+    flex: 0 0 50%;
+    margin: 0;
 
 }
 #subscribe .container .subscribe-content .subscribe-text h2{
@@ -29,7 +29,6 @@
     color: var(--dark);
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--dark);
     margin-bottom: 1rem;
     line-height: 1.2;
 }
@@ -54,6 +53,7 @@
     align-items: center;
     border: 1px solid var(--accent);
     transition: border 0.3s ease;
+    height: 50px;
 }
 
 #subscribe .container .subscribe-content .subscribe-text form:has(button:hover){
@@ -90,17 +90,62 @@
 }
 
 #subscribe .container .subscribe-content .subscribe-img{
-    flex: 0 0 38%;
     text-align: right;
 }
 #subscribe .container .subscribe-content .subscribe-img img{
+    display: block;
     max-width: 100%;
     height: 362.3px;
 }
 
-@media (min-width: 992px) {
+@media (max-width: 1199px) {
+    #subscribe .container{
+        max-width: 960px;
+    }
+}
+
+@media (max-width: 991px) {
+    #subscribe .container{
+        max-width: 720px;
+        padding: 60px;
+        padding-bottom: 0;
+
+    }
+    #subscribe .container .subscribe-content{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
     #subscribe .container .subscribe-content .subscribe-text{
-        flex: 0 0 auto;
-        width: 50%;
+        flex: 0 0 100%;
+        width: 100%;
+        padding-bottom: 2rem;
+    }
+
+    #subscribe .container .subscribe-content .subscribe-text form{
+        width: 100%;
+    }
+    #subscribe .container .subscribe-content .subscribe-img img{
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 767px) {
+    #subscribe .container{
+        max-width: 540px;
+    }
+}
+
+@media (max-width: 575px) {
+    #subscribe .container{
+        padding: 12px;
+        border-radius: 0;
+    }
+
+    #subscribe .container .subscribe-content .subscribe-text{
+        margin-top: 24px;
+        width: 100%;
     }
 }
