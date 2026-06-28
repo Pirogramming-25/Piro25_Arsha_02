@@ -4,13 +4,8 @@
     background-color: var(--bg-light);
 }
 
-#faq {
-    width: 100%;
-}
-
 #faq .container .section-title{
     text-align: center;
-    padding-bottom: 60px;
 }
 
 #faq .container .section-title h2{
