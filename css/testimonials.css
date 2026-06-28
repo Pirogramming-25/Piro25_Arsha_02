@@ -1,0 +1,126 @@
+/* ===== Testimonials Section ===== */
+.testimonials {
+  padding: 60px 0;
+}
+
+.testimonials .section-title h2 {
+  color: #37517e;
+}
+
+.testimonials-slider {
+  position: relative;
+  height: 380px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.testimonial-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  animation: slideShow 40s infinite;
+  box-sizing: border-box;
+  z-index: 0;
+}
+
+.testimonial-item:nth-child(1) { animation-delay: 0s; }
+.testimonial-item:nth-child(2) { animation-delay: 5s; }
+.testimonial-item:nth-child(3) { animation-delay: 10s; }
+.testimonial-item:nth-child(4) { animation-delay: 15s; }
+.testimonial-item:nth-child(5) { animation-delay: 20s; }
+.testimonial-item:nth-child(6) { animation-delay: 25s; }
+.testimonial-item:nth-child(7) { animation-delay: 30s; }
+.testimonial-item:nth-child(8) { animation-delay: 35s; }
+
+@keyframes slideShow {
+  0%      { opacity: 0; z-index: 0; pointer-events: none; }
+  2%      { opacity: 1; z-index: 1; pointer-events: auto; }
+  12.5%   { opacity: 1; z-index: 1; pointer-events: auto; }
+  14.5%   { opacity: 0; z-index: 0; pointer-events: none; }
+  100%    { opacity: 0; z-index: 0; pointer-events: none; }
+}
+
+/* 프로필 이미지 */
+.testimonial-item img {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 15px;
+}
+
+/* 이름 */
+.testimonial-item h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #37517e;
+  margin-bottom: 5px;
+}
+
+/* 직함 */
+.testimonial-item h4 {
+  font-size: 14px;
+  color: #6c757d;
+  margin-bottom: 10px;
+  font-weight: normal;
+}
+
+/* 별점 */
+.stars span {
+  color: #ffc107;
+  font-size: 18px;
+}
+
+/* 후기 텍스트 */
+.testimonial-item p {
+  font-style: italic;
+  color: #6c757d;
+  max-width: 700px;
+  margin: 15px auto 0;
+  line-height: 1.8;
+}
+
+/* 따옴표 */
+.quote-left,
+.quote-right {
+  color: #47b2e4;
+  font-size: 26px;
+}
+
+/* 점 네비게이터 */
+.testimonials-dots {
+  text-align: center;
+  margin-top: 0px;
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #d4d4d4;
+  margin: 0 4px;
+  animation: dotActive 40s infinite;
+}
+
+.dot:nth-child(1) { animation-delay: 0s; }
+.dot:nth-child(2) { animation-delay: 5s; }
+.dot:nth-child(3) { animation-delay: 10s; }
+.dot:nth-child(4) { animation-delay: 15s; }
+.dot:nth-child(5) { animation-delay: 20s; }
+.dot:nth-child(6) { animation-delay: 25s; }
+.dot:nth-child(7) { animation-delay: 30s; }
+.dot:nth-child(8) { animation-delay: 35s; }
+
+@keyframes dotActive {
+  0%      { background: #47b2e4; }
+  12.5%   { background: #47b2e4; }
+  12.6%   { background: #d4d4d4; }
+  100%    { background: #d4d4d4; }
+}
