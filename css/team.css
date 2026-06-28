@@ -1,3 +1,105 @@
-/* team.css  —  담당: 문예지 */
+/* team.css — 담당: 문예지 */
 /* 이 파일에만 작성하세요. 공통 변수는 var(--accent) 처럼 사용 */
+
+/* ===== 섹션 제목 ===== */
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--dark);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.section-title h2::after {
+  content: '';
+  display: block;
+  width: 3rem;
+  height: 3px;
+  background: var(--accent);
+  margin: 0.5rem auto 0;
+}
+
+.section-title p {
+  color: var(--gray);
+  font-size: 1rem;
+}
+
+/* ===== 카드 그리드 ===== */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+/* ===== 카드 ===== */
+.team-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: var(--white);
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.team-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* ===== 카드 정보 ===== */
+.team-info h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.2rem;
+}
+
+.team-info span {
+  font-size: 0.9rem;
+  color: var(--gray);
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 0.5rem;
+}
+
+.team-info p {
+  font-size: 0.9rem;
+  color: var(--gray);
+  margin-bottom: 0.8rem;
+}
+
+/* ===== SNS 아이콘 ===== */
+.team-social {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.team-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 1px solid #e0e0e0;
+  color: var(--gray);
+  transition: all 0.3s;
+}
+
+.team-social a:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--white);
+}
 
