@@ -163,9 +163,6 @@
     #faq .container {
         max-width: 540px;
     }
-    #faq .container .section-title h2{
-        max-width: 90%;
-    }
 
     #faq .container .faq-list .faq-item {
         padding: 20px;
@@ -178,8 +175,5 @@
     }
     #faq .container .faq-list .faq-item {
         padding: 15px;
-    }
-    #faq .container .section-title h2 {
-        font-size: 26px;
     }
 }
