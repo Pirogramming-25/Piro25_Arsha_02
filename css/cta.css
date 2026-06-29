@@ -1,3 +1,68 @@
 /* cta.css  —  담당: 이수빈 */
 /* 이 파일에만 작성하세요. 공통 변수는 var(--accent) 처럼 사용 */
 
+#cta{
+  position: relative;
+  background: url("../images/cta-bg.webp") center center / cover no-repeat fixed;
+  padding: 100px 0;
+}
+#cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;                                /* 위/아래/좌/우 0 = 섹션 꽉 채움 */
+  background-color: rgba(55, 81, 126, 0.65);  /* #37517e 65% 불투명 */
+}
+
+#cta .container {
+  position: relative;
+  z-index: 1;                              /* :before 위에 글자 오게 */
+}
+
+#cta .cta-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+#cta .cta-text h3 {
+  color:var(--white);
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+#cta .cta-text p {
+  color:var(--white);
+  margin: 0;
+}
+
+/* 버튼 (테두리만 있는 흰 버튼) */
+#cta .cta-btn {
+  flex-shrink: 0;                          /* 버튼 안 찌그러지게 */
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 50px;                   
+  padding: 10px 30px;
+  font-weight: 300;
+  transition: 0.3s;
+}
+
+#cta .cta-btn:hover {
+  background: var(--accent);               /* 마우스 올리면 파랑 채움 */
+  border-color: var(--accent);
+}
+
+@media(max-width:1199px){
+  #cta .cta-box{
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #cta .container{
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+
+
+}
