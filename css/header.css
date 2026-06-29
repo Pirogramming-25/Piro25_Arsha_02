@@ -112,7 +112,7 @@
 #header .demo-bar .demo-left {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
   padding-left: 10px;
 }
 .demo-bar .demo-logo {
@@ -133,7 +133,7 @@
 .preview-devices ul {
   display: flex;
   margin-left: 20px;
-  gap: 5px;
+  gap: 6px;
 }
 
 .preview-devices ul li {
@@ -145,7 +145,10 @@
 
 #header .preview-devices ul li img {
   padding: 2px;
+  transform: scale(1.3);
+  transition: opacity 0.3s ease; 
   
+  filter: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(7495%) hue-rotate(271deg) brightness(100%) contrast(106%);
   
 }
 
@@ -153,15 +156,21 @@
   cursor: pointer;
 }
 
-#header .preview-devices ul li img {
-  filter: brightness(0) saturate(100%) invert(72%) sepia(17%) saturate(372%) hue-rotate(166deg) brightness(94%) contrast(91%);
+#header .tablet-original,
+#header .mobile-original {
+  opacity: 0.6;
 }
+
+#header .desktop-original {
+  opacity: 1;
+}
+
 
 /* 마우스 올렸을 때(hover) */
 #header .desktop-original:hover,
 #header .tablet-original:hover,
 #header .mobile-original:hover {
-  filter: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(7495%) hue-rotate(271deg) brightness(100%) contrast(106%);
+  opacity: 1;
 }
 
 
@@ -178,17 +187,20 @@
 }
 
 #header .current-menu a img {
-  filter: brightness(0) saturate(100%) invert(72%) sepia(17%) saturate(372%) hue-rotate(166deg) brightness(94%) contrast(91%);
+  transition: opacity 0.3s ease; 
+  filter: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(7495%) hue-rotate(271deg) brightness(100%) contrast(106%);
 }
 
-
-
+#header .prev-original,
+#header .next-original {
+  opacity: 0.6;
+}
 
 
 /* 마우스 올렸을 때(hover) 필터링 */
 #header .prev-original:hover,
 #header .next-original:hover {
-  filter: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(7495%) hue-rotate(271deg) brightness(100%) contrast(106%);;
+  opacity: 1;
 }
 
 
@@ -214,13 +226,18 @@
 }
 
 #header .navigate a img {
-  filter: brightness(0) saturate(100%) invert(72%) sepia(17%) saturate(372%) hue-rotate(166deg) brightness(94%) contrast(91%);
+  transition: opacity 0.3s ease; 
+  filter: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(7495%) hue-rotate(271deg) brightness(100%) contrast(106%);
+}
+
+#header .share-original {
+  opacity: 0.6;
 }
 
 
 /* 마우스 올렸을 때(hover) */
 #header .share-original:hover {
-  filter: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(7495%) hue-rotate(271deg) brightness(100%) contrast(106%);;
+  opacity: 1;
 }
 
 #header .navigate .btn-download {
@@ -234,6 +251,8 @@
   padding: 0 14px;
   font: var(--font-heading);
   color: white;
+
+  transition: background-color 0.3s ease; 
 }
 
 
