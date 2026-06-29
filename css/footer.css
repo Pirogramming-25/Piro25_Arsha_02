@@ -70,7 +70,7 @@
 }
 
 #footer .footer-newsletter .join-form input[type="submit"]:hover{
-    background-color: color-mix(in srgb, var(--accent), black 10%);
+    background-color: color-mix(in srgb, var(--accent), white 20%);
 }
 
 #footer .footer-top{
@@ -191,14 +191,13 @@
     height: 38px;
     border-radius: 50%;
     border: 1px solid var(--gray-light);
-    color: var(--dark);
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    color: var(--gray);
+    transition: color 0.3s ease, border-color 0.3s ease;
 }
 
 #footer .footer-top .social-links a:hover{
-    background-color: var(--accent);
     border-color: var(--accent);
-    color: var(--white);
+    color: var(--accent);
 }
 
 #footer .copyright{
