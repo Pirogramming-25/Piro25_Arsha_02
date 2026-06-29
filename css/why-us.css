@@ -4,6 +4,7 @@
 #why-us{
   background-color: var(--bg-light);
 }
+/* 카드를 펼칠때마다 우측 img의 center도 재정렬해야하는데, 부드러운 움직임 구현하지 못함*/
 #why-us .container{
   display: flex;
   justify-content: space-between;

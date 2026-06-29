@@ -62,9 +62,9 @@
 #about .container .about-container .about-second-paragraph p{
   display: block;
 }
-#about .container .about-container button{
+#about .container .about-container a{
   margin-top: 15px;
-  display: block;
+  display: inline-block;
   border: 2px solid var(--accent);
   padding: 5px 20px;
   border-radius: 5px;
@@ -73,11 +73,11 @@
   font-weight: 600;
   font-family: var(--font-body);
 }
-#about .container .about-container button:hover{
+#about .container .about-container a:hover{
   background-color: var(--accent);
   color: var(--white);
 }
-#about .container .about-container button img{
+#about .container .about-container a img{
   width: 15px;
   height: 15px;
   vertical-align: -2px;
@@ -85,7 +85,7 @@
   display: inline;
   transition: transform 0.3s ease;
 }
-#about .container .about-container button:hover img{
+#about .container .about-container a:hover img{
   transform: translateX(5px);
   content: url('../images/arrow-right-white.svg');
 }

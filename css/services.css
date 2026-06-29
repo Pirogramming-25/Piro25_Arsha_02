@@ -51,7 +51,7 @@
 #services .container .services-cardlist .services-card{
   width: 20%;
   height: 20%;
-  display: inline-block;
+  display: block;
   padding: 20px 20px;
   background-color: var(--white);
   box-shadow: 0 0 30px 16px rgba(0,0,0,0.1);
