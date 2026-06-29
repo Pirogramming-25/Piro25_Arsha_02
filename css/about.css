@@ -19,6 +19,7 @@
   font-size: 2rem;
   font-weight: 900;
 }
+/* 제목 아래 span*/
 #about .container .about-title .about-first, .about-third{
   display: inline-block;
   width: 55px;
@@ -40,11 +41,14 @@
 }
 #about .container .about-container{
   display: flex;
+  margin-top: 30px;
 }
 #about .container .about-container .about-first-paragraph{
   flex: 1;
   flex-shrink: 0;
   margin-right: 15px;
+  color: var(--gray);
+  font-size: 1.1rem;
 }
 #about .container .about-container .about-first-paragraph ul{
   margin-top: 20px;
@@ -61,6 +65,8 @@
 }
 #about .container .about-container .about-second-paragraph p{
   display: block;
+  color: var(--gray);
+  font-size: 1.1rem;
 }
 #about .container .about-container a{
   margin-top: 15px;
@@ -100,6 +106,7 @@
     transform: translateY(0);
   }
 }
+/* 태블릿사이즈에서 배치 vertical */
 @media (max-width: 1024px){
   #about .container .about-container{
     flex-direction: column;

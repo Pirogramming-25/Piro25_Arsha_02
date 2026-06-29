@@ -17,11 +17,14 @@
 }
 #why-us .container .why-us-first-area h2{
   color: var(--dark);
-  font-size: 2rem;
-  font-weight: 550;
+  font-size: 2.3rem;
+  font-weight: 400;
 }
 #why-us .container .why-us-first-area h2 strong{
   font-weight: 900;
+}
+#why-us .container .why-us-first-area p{
+  color: var(--gray);
 }
 #why-us .container .why-us-first-area .why-us-card{
   padding: 10px 10px;
@@ -62,7 +65,7 @@
   justify-content: flex-start;
   gap: 20px;
   color: var(--accent);
-  font-weight: 700;
+  font-weight: 500;
   align-items: center;
 }
 #why-us .container .why-us-first-area .why-us-card .why-us-card-name span{
