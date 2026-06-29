@@ -1,3 +1,174 @@
 /* faq.css  —  담당: 강보민 */
 /* 이 파일에만 작성하세요. 공통 변수는 var(--accent) 처럼 사용 */
+#faq {
+    background-color: var(--bg-light);
+}
 
+#faq .container .section-title{
+    text-align: center;
+}
+
+#faq .container .section-title h2{
+    color: var(--dark);
+    font-size: 32px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    
+    position: relative;
+}
+
+#faq .container .section-title h2::before{
+    content: "";
+    position: absolute;
+    bottom: 1px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    background-color: var(--gray);
+    width: 160px;
+    height: 1.5px;
+}
+
+#faq .container .section-title h2::after{
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    background-color: var(--accent);
+    width: 60px;
+    height: 3px;
+}
+
+
+
+#faq .container .section-title p{
+    color: var(--gray);
+}
+
+#faq .container .faq-list{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    padding: 0 100px;
+
+}
+
+#faq .container .faq-list .faq-item{
+    background-color: var(--white);
+
+    padding: 15px;
+    width: 100%;
+
+}
+
+#faq .container .faq-list .faq-item .question{
+    display: flex;
+    align-items: first baseline;
+    
+}
+
+#faq .container .faq-list .faq-item .question .question-mark{
+    border: 0.1rem solid var(--accent);
+    border-radius: 50%;
+    color: var(--accent);
+
+    width: 22px;
+    height: 22px;
+    font-size: 15px;
+    font-weight: 700;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    margin-right: 15px;
+    
+}
+
+#faq .container .faq-list .faq-item .question .question-mark::before{
+    content: '?';
+}
+
+
+#faq .container .faq-list .faq-item .question .question-text{
+    flex: 1;
+    text-align: start;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--dark);
+    transition: color ease 0.3s;
+    cursor: pointer;
+}
+
+#faq .container .faq-list .faq-item .question .question-text:hover{
+    color: var(--accent);
+}
+
+#faq .container .faq-list .faq-item .question .arrow{
+    flex-shrink: 0;
+    font-size: 20px;
+    color: var(--dark);
+    transition: color ease 0.3s;
+    cursor: pointer;
+    margin-left: 30px;
+}
+
+#faq .container .faq-list .faq-item .question .arrow:hover{
+    color: var(--accent);
+}
+
+#faq .container .faq-list .faq-item:nth-child(1) .question .question-text{
+    color: var(--accent);
+}
+
+#faq .container .faq-list .faq-item:nth-child(1) .question .arrow{
+    transform: rotate(90deg);
+    color: var(--accent);
+}
+
+#faq .container .faq-list .faq-item .answer{
+    display: none;
+}
+#faq .container .faq-list .faq-item:nth-child(1) .answer{
+    display: block;
+    padding-top: 10px;
+}
+
+@media (max-width: 1199px) {
+    #faq .container {
+        max-width: 960px;
+    }
+}
+
+@media (max-width: 991px) {
+    #faq .container {
+        max-width: 720px;
+    }
+    #faq .container .faq-list {
+        padding: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    #faq .container {
+        max-width: 540px;
+    }
+
+    #faq .container .faq-list .faq-item {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 575px) {
+    #faq .container {
+        max-width: 100%;
+    }
+    #faq .container .faq-list .faq-item {
+        padding: 15px;
+    }
+}
