@@ -58,19 +58,38 @@
   appearance: none;
 }
 
-/* ===================================== */
+/* =========================== */
+/* 1. Header */
+/* =========================== */
 
 #header {
   width: 100%;
-  background-color: aqua;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  z-index: 9999; /* 다른 콘텐츠보다 항상 위에 보이도록 설정 */
+  z-index: 9999;
+
+  background-color: var(--dark);
+  transition: all 0.5s;
+
+
+  animation: scroll-darken linear both;
+  animation-timeline: scroll(root);
+  animation-range: 0px 150px;
 }
 
-.container {
+@keyframes scroll-darken {
+  from {
+    background-color: var(--dark); 
+  }
+  to {
+    background-color: #3d4d6a;
+    opacity: 0.92;
+  }
+}
+
+
+#header .container {
   width: 100%;
 }
 
@@ -86,15 +105,14 @@
   align-items: center;
   justify-content: space-between;
   height: 32px;
-  /* padding: 0 200px; */
+
 }
 
 /* 좌측 */
 #header .demo-bar .demo-left {
-    /* background-color: green; */
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
   padding-left: 10px;
 }
 .demo-bar .demo-logo {
@@ -103,26 +121,22 @@
 }
 
 .demo-bar .demo-logo img {
-  /* background-color: red; */
   height: 24px;
   display: block;
   margin-left: 10px;
 }
 
 #header .preview-devices {
-  /* display: flex; */
-  /* align-items: center; */
   margin-left: 20px;
 }
 
 .preview-devices ul {
   display: flex;
   margin-left: 20px;
-  gap: 5px;
+  gap: 6px;
 }
 
 .preview-devices ul li {
-  /* background-color: blueviolet; */
   display: flex;
   align-items: center;
   width: 22px;
@@ -131,32 +145,40 @@
 
 #header .preview-devices ul li img {
   padding: 2px;
+  transform: scale(1.3);
+  transition: opacity 0.3s ease; 
+  
+  filter: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(7495%) hue-rotate(271deg) brightness(100%) contrast(106%);
+  
 }
 
 .preview-devices ul li:hover {
   cursor: pointer;
 }
 
-#header .preview-devices ul li img {
-  filter: brightness(0) saturate(100%) invert(72%) sepia(17%) saturate(372%) hue-rotate(166deg) brightness(94%) contrast(91%);
+#header .tablet-original,
+#header .mobile-original {
+  opacity: 0.6;
 }
+
+#header .desktop-original {
+  opacity: 1;
+}
+
 
 /* 마우스 올렸을 때(hover) */
 #header .desktop-original:hover,
 #header .tablet-original:hover,
 #header .mobile-original:hover {
-  filter: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(7495%) hue-rotate(271deg) brightness(100%) contrast(106%);
+  opacity: 1;
 }
 
 
 /* --- [중앙 구역] 현재 메뉴명 및 좌우 화살표 --- */
 .current-menu {
-  /* background-color: aquamarine; */
   display: flex;
   align-items: center;
   gap: 15px;
-  /* margin-left: auto; */
-  /* margin-right: 30px; */
 }
 
 .current-menu a {
@@ -165,17 +187,25 @@
 }
 
 #header .current-menu a img {
-  filter: brightness(0) saturate(100%) invert(72%) sepia(17%) saturate(372%) hue-rotate(166deg) brightness(94%) contrast(91%);
+  transition: opacity 0.3s ease; 
+  filter: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(7495%) hue-rotate(271deg) brightness(100%) contrast(106%)
+          drop-shadow(0.3px 0px 0px #ffffff) 
+          /* drop-shadow(-0.3px 0px 0px #ffffff)  */
+          drop-shadow(0px 0.3px 0px #ffffff) 
+          drop-shadow(0px -0.3px 0px #ffffff);
 }
 
-
-
+#header .prev-original,
+#header .next-original {
+  opacity: 0.7;
+  
+}
 
 
 /* 마우스 올렸을 때(hover) 필터링 */
 #header .prev-original:hover,
 #header .next-original:hover {
-  filter: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(7495%) hue-rotate(271deg) brightness(100%) contrast(106%);;
+  opacity: 1;
 }
 
 
@@ -195,20 +225,25 @@
 
 .navigate .btn-share {
   display: flex;
-  /* background-color: orange; */
-  /* padding: 0 20px; */
   align-items: center;
   justify-self: center;
   height: 100%;
 }
 
 #header .navigate a img {
-  filter: brightness(0) saturate(100%) invert(72%) sepia(17%) saturate(372%) hue-rotate(166deg) brightness(94%) contrast(91%);
+  transition: opacity 0.3s ease; 
+  filter: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(7495%) hue-rotate(271deg) brightness(100%) contrast(106%)
+          drop-shadow(0px -0.2px 0px #ffffff);
 }
+
+#header .share-original {
+  opacity: 0.6;
+}
+
 
 /* 마우스 올렸을 때(hover) */
 #header .share-original:hover {
-  filter: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(7495%) hue-rotate(271deg) brightness(100%) contrast(106%);;
+  opacity: 1;
 }
 
 #header .navigate .btn-download {
@@ -222,6 +257,8 @@
   padding: 0 14px;
   font: var(--font-heading);
   color: white;
+
+  transition: background-color 0.3s ease; 
 }
 
 
@@ -238,8 +275,31 @@
 #header .navigate .btn-download span {
   font-size: 0.8rem;
   font-weight: 800;
-  /* font: var(--font-heading); */
 }
+
+/* 반응형 */
+/* 1차: device 사라짐 */
+@media (max-width: 1024px) {
+  .preview-devices {
+    display: none;
+  }
+}
+/* 2차: 로고 사라지고 current menu는 좌측으로 이동 */
+@media (max-width: 768px) {
+  .demo-bar .demo-logo {
+    display: none;
+  }
+
+  #header .current-menu {
+    position: static !important;
+    transform: none !important;
+
+    margin-right: auto; 
+    padding-left: 10px; 
+  }
+}
+
+
 
 
 /* ===================================== */
@@ -255,14 +315,21 @@
   justify-content: space-between;
   padding:0 300px;
 
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 20px 20px;
+  box-sizing: border-boxs;
+
+  background-color: transparent !important;
+
   animation: changeColor linear both;
-  animation-timeline: scroll(root); /* 브라우저 전체 스크롤을 감지 */
+  animation-timeline: scroll(root); 
   animation-range: 0px 150px;
 }
 
 @keyframes changeColor {
   to {
-    background-color: #3d4d6a; /* 2. 스크롤이 내려갔을 때: 어두운 파란색 */
+    background-color: #3d4d6a;
   }
 }
 
@@ -277,9 +344,8 @@
 
 /* 2. 내비게이션 메뉴 구역 (.navmenu) */
 #header .nav-bar .navmenu {
-  /* background-color: aqua; */
-  margin-left: auto; /* 메뉴를 우측으로 밀어서 버튼 왼쪽에 정렬 */
-  margin-right: 30px; /* Get Started 버튼과의 간격 */
+  margin-left: auto; 
+  margin-right: 30px; 
 }
 
 .nav-bar .navmenu ul {
@@ -300,6 +366,11 @@
   align-items: center;
 }
 
+#header .nav-bar .cur-navmenu {
+  color: var(--accent);
+}
+
+
 /* 마우스를 올렸을 때 */
 #header .nav-bar .navmenu ul li a:hover {
   color: #47b2e4;
@@ -314,7 +385,22 @@
 .nav-bar .navmenu ul li.dropdown a img {
   width: 12px;
   height: auto;
+  transition: opacity 0.3s ease; 
+  filter: brightness(0) saturate(100%) invert(74%) sepia(50%) saturate(1497%) hue-rotate(174deg) brightness(96%) contrast(89%) brightness(500%);
+
+  filter: drop-shadow(0.1px 0px 0px currentColor) 
+  drop-shadow(0px 0.1px 0px currentColor) 
+  drop-shadow(0px -0.1px 0px currentColor);
 }
+/* 마우스 올렸을 때 */
+.navmenu .dropdown a:hover img {
+  filter: brightness(0) saturate(100%) invert(74%) sepia(50%) saturate(1497%) hue-rotate(174deg) brightness(9%) contrast(89%) brightness(1%);
+}
+
+
+
+
+
 
 /* 3. Get Started 버튼 스타일 */
 #header .nav-bar .btn-getstarted {
@@ -331,7 +417,53 @@
   justify-content: center;
 }
 
-/* 버튼 마우스 호버 효과 */
+
 #header .nav-bar .btn-getstarted:hover {
   background-color: #1ea8e7; 
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.mobile-nav-toggle {
+  display: none; 
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 6px;
+  padding: 5px;
+}
+
+
+.mobile-nav-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+
+
+@media (max-width: 1200px) {
+  .nav-bar {
+    padding: 20px 24px; 
+  }
+
+  .navmenu {
+    display: none !important;
+  }
+
+  .btn-getstarted {
+    display: block; 
+  }
+
+  .mobile-nav-toggle {
+    display: flex;
+  }
 }
