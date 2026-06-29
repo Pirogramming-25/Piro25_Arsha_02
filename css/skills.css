@@ -2,6 +2,7 @@
 #skills .container{
   display: flex;
   align-items: center;
+  animation: fadeUp 0.8s ease;
 }
 #skills .container .skills-img{
   width: 50%;
@@ -56,4 +57,19 @@
 #skills .container .skills-right .skill-bar .progress:nth-child(4) .progressbar-wrap .progress-bar{
   height: 100%;
   width: 55%;
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media(max-width: 1024px) {
+  #skills .container{
+    flex-direction: column;
+  }
 }
