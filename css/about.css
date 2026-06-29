@@ -19,7 +19,7 @@
 }
 #about .container .about-title .about-first, .about-third{
   display: inline-block;
-  width: 60px;
+  width: 55px;
   height: 1px;
   background-color: var(--gray);
   /* background-color: #ccc; */
