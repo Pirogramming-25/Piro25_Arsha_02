@@ -80,10 +80,10 @@
 
 @keyframes scroll-darken {
   from {
-    background-color: var(--dark); /* 스크롤 내리기 전 (밝음) */
+    background-color: var(--dark); 
   }
   to {
-    background-color: #3d4d6a; /* 스크롤 내린 후 (어두워짐) */
+    background-color: #3d4d6a;
     opacity: 0.92;
   }
 }
@@ -105,12 +105,11 @@
   align-items: center;
   justify-content: space-between;
   height: 32px;
-  /* padding: 0 200px; */
+
 }
 
 /* 좌측 */
 #header .demo-bar .demo-left {
-    /* background-color: green; */
   display: flex;
   align-items: center;
   gap: 20px;
@@ -122,15 +121,12 @@
 }
 
 .demo-bar .demo-logo img {
-  /* background-color: red; */
   height: 24px;
   display: block;
   margin-left: 10px;
 }
 
 #header .preview-devices {
-  /* display: flex; */
-  /* align-items: center; */
   margin-left: 20px;
 }
 
@@ -141,7 +137,6 @@
 }
 
 .preview-devices ul li {
-  /* background-color: blueviolet; */
   display: flex;
   align-items: center;
   width: 22px;
@@ -172,12 +167,9 @@
 
 /* --- [중앙 구역] 현재 메뉴명 및 좌우 화살표 --- */
 .current-menu {
-  /* background-color: aquamarine; */
   display: flex;
   align-items: center;
   gap: 15px;
-  /* margin-left: auto; */
-  /* margin-right: 30px; */
 }
 
 .current-menu a {
@@ -216,8 +208,6 @@
 
 .navigate .btn-share {
   display: flex;
-  /* background-color: orange; */
-  /* padding: 0 20px; */
   align-items: center;
   justify-self: center;
   height: 100%;
@@ -260,23 +250,29 @@
 #header .navigate .btn-download span {
   font-size: 0.8rem;
   font-weight: 800;
-  /* font: var(--font-heading); */
 }
 
-
+/* 반응형 */
+/* 1차: device 사라짐 */
 @media (max-width: 1024px) {
   .preview-devices {
     display: none;
   }
 }
-
+/* 2차: 로고 사라지고 current menu는 좌측으로 이동 */
 @media (max-width: 768px) {
   .demo-bar .demo-logo {
     display: none;
   }
+
+  #header .current-menu {
+    position: static !important;
+    transform: none !important;
+
+    margin-right: auto; 
+    padding-left: 10px; 
+  }
 }
-
-
 
 
 

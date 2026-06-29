@@ -228,31 +228,14 @@
   }
   
   @keyframes step-ticker {
-    /* 1번째 로고 세트 노출 및 대기 (0% ~ 11%) */
     0%, 11% { transform: translateX(0); }
-    
-    /* 2번째 로고로 이동 (-220px) 후 대기 */
     12.5%, 23.5% { transform: translateX(-220px); }
-    
-    /* 3번째 로고로 이동 (-440px) 후 대기 */
     25%, 36% { transform: translateX(-440px); }
-    
-    /* 4번째 로고로 이동 (-660px) 후 대기 */
     37.5%, 48.5% { transform: translateX(-660px); }
-    
-    /* 5번째 로고로 이동 (-880px) 후 대기 */
     50%, 61% { transform: translateX(-880px); }
-    
-    /* 6번째 로고로 이동 (-1100px) 후 대기 */
     62.5%, 73.5% { transform: translateX(-1100px); }
-    
-    /* 7번째 로고로 이동 (-1320px) 후 대기 */
     75%, 86% { transform: translateX(-1320px); }
-    
-    /* 8번째 로고로 이동 (-1540px) 후 대기 */
     87.5%, 98.5% { transform: translateX(-1540px); }
-    
-    /* 원본 8개가 끝나고 (-1760px) 리셋 */
     100% { transform: translateX(-1760px); }
   }
   
