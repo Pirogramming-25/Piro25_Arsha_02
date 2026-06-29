@@ -5,7 +5,9 @@
   margin: 0 50px;
 }
 #about .container{
+  animation: fadeUp 0.8s ease;
 }
+/* span 사이 공백 없애기 위해 fontsize 0 */
 #about .container .about-title{
   text-align: center;
   font-size: 0;
@@ -17,9 +19,10 @@
   font-size: 2rem;
   font-weight: 900;
 }
+/* 제목 아래 span*/
 #about .container .about-title .about-first, .about-third{
   display: inline-block;
-  width: 60px;
+  width: 55px;
   height: 1px;
   background-color: var(--gray);
   /* background-color: #ccc; */
@@ -38,13 +41,15 @@
 }
 #about .container .about-container{
   display: flex;
+  margin-top: 30px;
 }
 #about .container .about-container .about-first-paragraph{
   flex: 1;
   flex-shrink: 0;
   margin-right: 15px;
+  color: var(--gray);
+  font-size: 1.1rem;
 }
-#about .container .about-container .about-first-paragraph p{}
 #about .container .about-container .about-first-paragraph ul{
   margin-top: 20px;
   margin-left: 20px
@@ -60,10 +65,12 @@
 }
 #about .container .about-container .about-second-paragraph p{
   display: block;
+  color: var(--gray);
+  font-size: 1.1rem;
 }
-#about .container .about-container button{
+#about .container .about-container a{
   margin-top: 15px;
-  display: block;
+  display: inline-block;
   border: 2px solid var(--accent);
   padding: 5px 20px;
   border-radius: 5px;
@@ -72,11 +79,11 @@
   font-weight: 600;
   font-family: var(--font-body);
 }
-#about .container .about-container button:hover{
+#about .container .about-container a:hover{
   background-color: var(--accent);
   color: var(--white);
 }
-#about .container .about-container button img{
+#about .container .about-container a img{
   width: 15px;
   height: 15px;
   vertical-align: -2px;
@@ -84,10 +91,22 @@
   display: inline;
   transition: transform 0.3s ease;
 }
-#about .container .about-container button:hover img{
+#about .container .about-container a:hover img{
   transform: translateX(5px);
   content: url('../images/arrow-right-white.svg');
 }
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* 태블릿사이즈에서 배치 vertical */
 @media (max-width: 1024px){
   #about .container .about-container{
     flex-direction: column;

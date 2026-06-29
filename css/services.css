@@ -1,3 +1,103 @@
 /* services.css  —  담당: 정현민 */
 /* 이 파일에만 작성하세요. 공통 변수는 var(--accent) 처럼 사용 */
 
+#services{
+  background-color: var(--bg-light);
+}
+#services .container{
+  animation: fadeUp 0.8s ease;
+}
+
+#services .container .services-title{
+  text-align: center;
+  font-size: 0;
+}
+
+#services .container .services-title h2{
+  text-align: center;
+  color: var(--dark);
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+#services .container .services-title p{
+  margin: 10px 0;
+  font-size: 1rem;
+  color: var(--gray);
+}
+#services .container .services-title .services-first,
+#services .container .services-title .services-third{
+  display: inline-block;
+  width: 45px;
+  height: 1px;
+  background-color: var(--gray);
+  vertical-align: middle;
+} 
+#services .container .services-title .services-second{
+  display: inline-block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--accent);
+  vertical-align: middle;
+}
+#services .container .services-cardlist{
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+#services .container .services-cardlist .services-card{
+  width: 23%;
+  min-height: 250px;
+  display: block;
+  padding: 30px 25px;
+  background-color: var(--white);
+  box-shadow: 0 0 30px 8px rgba(0,0,0,0.1);
+  transition: transform 0.5s ease;
+}
+#services .container .services-cardlist .services-card:hover{
+  transform: translateY(-10px);
+}
+#services .container .services-cardlist .services-card img{
+  width: 30px;
+  margin: 5px 0;
+}
+#services .container .services-cardlist .services-card h3{
+  transition: color 0.3s ease;
+  margin: 10px 0;
+}
+#services .container .services-cardlist .services-card:hover h3{
+  color: var(--accent);
+}
+#services .container .services-cardlist .services-card p{
+  margin-bottom: 10px;
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* 태블릿사이즈에서 카드 2X2로 배치*/
+@media(max-width: 1024px){
+  #services .container .services-cardlist{
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  #services .container .services-cardlist .services-card{
+    width: 45%;
+  }
+}
+/* 모바일사이즈에서 카드 vertical 배치*/
+@media(max-width: 768px){
+    #services .container .services-cardlist{
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  #services .container .services-cardlist .services-card{
+    width: 100%;
+  }
+}
