@@ -1,3 +1,121 @@
 /* hero.css  —  담당: 신은아 */
 /* 이 파일에만 작성하세요. 공통 변수는 var(--accent) 처럼 사용 */
 
+/* 기본 스타일 초기화 */
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+
+/* --- Hero Section Styles --- */
+#hero {
+  width: 100%;
+  min-height: 80vh;
+  background-color: var(--dark);
+  display: flex;
+  align-items: center;
+  padding: 120px 0px 60px;
+  position: relative;
+}
+
+
+#hero .container {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: row-reverse; 
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  
+  /* 텍스트 영역 */
+  .hero-letter {
+    flex: 1;
+    color: #ffffff;
+  }
+  
+  .hero-letter h1 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    margin-bottom: 15px;
+  }
+  
+  .hero-letter p {
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 30px;
+    font-weight: 500;
+  }
+  
+  /* 하단 버튼 영역 */
+  .hero-letter-bottom {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  /* Get Started 버튼 */
+  .hero-getstarted-btn {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s ease;
+  }
+  
+  .hero-getstarted-btn:hover {
+    background: #209dd8;
+  }
+  
+  /* Watch Video 버튼 */
+  .hero-watchvideo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .hero-watchvideo:hover {
+    color: #47b2e4;
+  }
+  
+  .hero-watchvideo img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* 이미지 영역 */
+  .hero-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero-img img {
+    max-width: 100%;
+    height: auto;
+    animation: up-down 2s ease-in-out infinite alternate;
+  }
+  
+  /* 이미지 둥둥 떠있는 애니메이션 효과 */
+  @keyframes up-down {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-10px);
+    }
+  }
