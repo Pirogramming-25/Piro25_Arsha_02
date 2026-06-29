@@ -80,7 +80,7 @@
 }
 
 .demo-bar {
-  background-color: var( --dark);
+  background-color: #023b6d;
   width: 100%;
   display: flex;
   align-items: center;
@@ -156,8 +156,9 @@
   /* cursor: pointer; */
 }
 
-.current-menu span {
+#header .current-menu span {
   color: white;
+  font-weight: 900;
 }
 
 
@@ -191,5 +192,103 @@
   color: white;
 }
 
-#header .navigate .btn-download {
+#header .navigate .btn-download span {
+  font-size: 0.8rem;
+  font-weight: 800;
+  /* font: var(--font-heading); */
+}
+
+
+/* ===================================== */
+/* nav-bar 스타일 구역 (어두운 파란색 내비게이션) */
+/* ===================================== */
+
+#header .nav-bar {
+  background-color: var(--dark);
+  width: 100%;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:0 300px;
+
+  animation: changeColor linear both;
+  animation-timeline: scroll(root); /* 브라우저 전체 스크롤을 감지 */
+  animation-range: 0px 150px;
+}
+
+@keyframes changeColor {
+  to {
+    background-color: #3d4d6a; /* 2. 스크롤이 내려갔을 때: 어두운 파란색 */
+  }
+}
+
+
+/* 1. 로고 스타일 */
+#header h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+}
+
+
+/* 2. 내비게이션 메뉴 구역 (.navmenu) */
+#header .nav-bar .navmenu {
+  /* background-color: aqua; */
+  margin-left: auto; /* 메뉴를 우측으로 밀어서 버튼 왼쪽에 정렬 */
+  margin-right: 30px; /* Get Started 버튼과의 간격 */
+}
+
+.nav-bar .navmenu ul {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-bar .navmenu ul li {
+  color: white;
+}
+
+#header .nav-bar .navmenu ul li a {
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+}
+
+/* 마우스를 올렸을 때 */
+#header .nav-bar .navmenu ul li a:hover {
+  color: #47b2e4;
+  transition: color 0.4s ease;
+}
+
+
+.nav-bar .navmenu ul li.dropdown a {
+  gap: 5px;
+}
+
+.nav-bar .navmenu ul li.dropdown a img {
+  width: 12px;
+  height: auto;
+}
+
+/* 3. Get Started 버튼 스타일 */
+#header .nav-bar .btn-getstarted {
+  color: #ffffff;
+  background-color: var(--accent);
+  font-size: 15px;
+  font-weight: 200;
+  padding: 6px 28px;
+  border-radius: 50px; 
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 버튼 마우스 호버 효과 */
+#header .nav-bar .btn-getstarted:hover {
+  background-color: #1ea8e7; 
 }
