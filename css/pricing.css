@@ -5,7 +5,7 @@
 #pricing .section-title h2 {
   font-size: 2rem;
   font-weight: 700;
-  color: #37517E;
+  color: var(--dark);
   font-family: "Jost", sans-serif;
 }
 
@@ -35,7 +35,7 @@
 .pricing-plan {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #37517E;
+  color: var(--dark);
   font-family: "Jost", sans-serif;
   margin-bottom: 1rem;
 }
