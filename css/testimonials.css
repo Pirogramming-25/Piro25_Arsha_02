@@ -48,6 +48,8 @@
 }
 
 .testimonials .section-title {
+  text-align: center;
+  margin-bottom: 3rem;
   opacity: 0;
   animation: fadeUpTitle 0.8s ease forwards;
   animation-delay: 0.2s;
