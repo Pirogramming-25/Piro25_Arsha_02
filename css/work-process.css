@@ -1,0 +1,126 @@
+/* work-process.css  —  담당: 이수빈 */
+
+#work-process .section-title{
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+#work-process .section-title h2{
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--dark); 
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+#work-process .section-title h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);   /* 가운데 정렬 */
+  width: 50px;
+  height: 3px;
+  background: var(--accent);
+}
+#work-process .section-title p {
+  color: var(--gray);
+  margin-top: 1rem;
+}
+
+#work-process .process-list{
+  display: flex;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  gap: 30px;
+  
+}
+
+#work-process .process-card{
+  flex: 1 1 calc(33.333% - 20px); 
+  background-color: var(--white);
+
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.45s ease, box-shadow 0.3s ease; 
+}
+
+#work-process .process-img {
+  position: relative;            /* 배지의 기준점 */
+  margin-bottom: 30px;
+}
+
+#work-process .process-img img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.5s ease, box-shadow 0.3s ease; 
+}
+
+#work-process .process-num{
+  left: 20px;
+  position: absolute;
+  bottom:-25px;
+  width: 50px;
+  height: 50px;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 19px;
+  
+  background: var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#work-process h3{
+
+  color: var(--dark); 
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+#work-process .process-card p {
+  color: var(--gray);
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+#work-process .process-check li{
+  color: var(--gray);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-size: 13px;
+}
+
+
+
+#work-process .process-check .check-icon{
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+
+@media (max-width: 991px){
+  #work-process .process-card {
+    flex: 1 1 100%;
+    max-width: 700px;    
+    margin: 0 auto;       /* 가운데 정렬 */
+  }
+  #work-process .process-img img {
+    height: 200px;          /* 이미지 높이 고정 */
+    object-fit: cover;      /* 넘치는 위아래를 잘라냄 */
+  }
+}
+
+#work-process .process-card:hover {
+  transform: translateY(-10px);                 /* 위로 10px 뜨기 */
+  box-shadow: 0 10px 20px rgba(148, 219, 255, 0.349);     /* 그림자 진해져서 떠보임 */
+}
+
+#work-process .process-card:hover .process-img img {
+  transform: scale(1.07);   /* 이미지만 살짝 확대 */
+}
