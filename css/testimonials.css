@@ -51,7 +51,7 @@
   text-align: center;
   opacity: 0;
   pointer-events: none;
-  animation: slideShow 40s infinite;
+  animation: slideShow 25s infinite;
   box-sizing: border-box;
   z-index: 0;
 }
@@ -61,15 +61,12 @@
 .testimonial-item:nth-child(3) { animation-delay: 10s; }
 .testimonial-item:nth-child(4) { animation-delay: 15s; }
 .testimonial-item:nth-child(5) { animation-delay: 20s; }
-.testimonial-item:nth-child(6) { animation-delay: 25s; }
-.testimonial-item:nth-child(7) { animation-delay: 30s; }
-.testimonial-item:nth-child(8) { animation-delay: 35s; }
 
 @keyframes slideShow {
   0%      { opacity: 0; z-index: 0; pointer-events: none; }
   2%      { opacity: 1; z-index: 1; pointer-events: auto; }
-  12.5%   { opacity: 1; z-index: 1; pointer-events: auto; }
-  14.5%   { opacity: 0; z-index: 0; pointer-events: none; }
+  18%     { opacity: 1; z-index: 1; pointer-events: auto; }
+  20%     { opacity: 0; z-index: 0; pointer-events: none; }
   100%    { opacity: 0; z-index: 0; pointer-events: none; }
 }
 
@@ -134,7 +131,7 @@
   border-radius: 50%;
   background: #d4d4d4;
   margin: 0 4px;
-  animation: dotActive 40s infinite;
+  animation: dotActive 25s infinite;
 }
 
 .dot:nth-child(1) { animation-delay: 0s; }
@@ -142,14 +139,11 @@
 .dot:nth-child(3) { animation-delay: 10s; }
 .dot:nth-child(4) { animation-delay: 15s; }
 .dot:nth-child(5) { animation-delay: 20s; }
-.dot:nth-child(6) { animation-delay: 25s; }
-.dot:nth-child(7) { animation-delay: 30s; }
-.dot:nth-child(8) { animation-delay: 35s; }
 
 @keyframes dotActive {
   0%      { background: var(--accent); }
-  12.5%   { background: var(--accent); }
-  12.6%   { background: #d4d4d4; }
+  20%     { background: var(--accent); }
+  20.1%   { background: #d4d4d4; }
   100%    { background: #d4d4d4; }
 }
 
