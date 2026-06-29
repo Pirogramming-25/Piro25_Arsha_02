@@ -131,6 +131,8 @@
 
 #header .preview-devices ul li img {
   padding: 2px;
+  
+  
 }
 
 .preview-devices ul li:hover {
@@ -205,6 +207,7 @@
 #header .navigate a img {
   filter: brightness(0) saturate(100%) invert(72%) sepia(17%) saturate(372%) hue-rotate(166deg) brightness(94%) contrast(91%);
 }
+
 
 /* 마우스 올렸을 때(hover) */
 #header .share-original:hover {
