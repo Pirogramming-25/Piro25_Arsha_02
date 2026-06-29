@@ -1,3 +1,46 @@
-/* contact.css  —  담당: 강보민 */
 /* 이 파일에만 작성하세요. 공통 변수는 var(--accent) 처럼 사용 */
 
+#contact {
+    background-color: var(--white);
+}
+
+#contact .container .section-title{
+    text-align: center;
+}
+
+#contact .container .section-title h2{
+    color: var(--dark);
+    font-size: 32px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    
+    position: relative;
+}
+
+#contact .container .section-title h2::before{
+    content: "";
+    position: absolute;
+    bottom: 1px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    background-color: var(--gray);
+    width: 160px;
+    height: 1px;
+}
+
+#contact .container .section-title h2::after{
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    background-color: var(--accent);
+    width: 60px;
+    height: 3px;
+}
+
+#faq .container .section-title p{
+    color: var(--gray);
+}
