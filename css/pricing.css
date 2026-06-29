@@ -7,6 +7,34 @@
   font-weight: 700;
   color: var(--dark);
   font-family: "Jost", sans-serif;
+  position: relative;
+  padding-bottom: 13px;
+}
+
+#pricing .section-title h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--accent);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+#pricing .section-title h2::before {
+  content: '';
+  display: block;
+  width: 200px;
+  height: 1px;
+  background: #d4d4d4;
+  position: absolute;
+  bottom: 1px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
 }
 
 /* ===== 카드 그리드 ===== */
