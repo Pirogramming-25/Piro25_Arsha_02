@@ -6,7 +6,7 @@
 
 #blog .container .section-title{
     text-align: center;
-    padding-bottom: 0 12px 60px 12px;
+    padding: 0 12px 60px 12px;
 }
 
 #blog .container .section-title h2{
@@ -49,12 +49,15 @@
 #blog .container .blog-content{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 3rem;
 }
 
 #blog .container .blog-content .blog-item{
-    margin: 0 12px;
+    flex: 1;
+    min-width: 0;
+    margin: 0 0.5rem;
     box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
 }
 #blog .container .blog-content .blog-item .blog-img{
     position: relative;
@@ -63,6 +66,7 @@
 }
 
 #blog .container .blog-content .blog-item .blog-img img{
+    width: 100%;
     transition: transform 0.5s ease;
 }
 
@@ -154,4 +158,38 @@
 
 #blog .container .blog-content .blog-item:hover .blog-info .read-more .icon{
     color: var(--accent);
+}
+
+@media (max-width: 1199px){
+    #blog .container{
+        max-width: 960px;
+    }
+
+    #blog .container .blog-content .blog-item{
+        flex: 0 0 calc(50% - 24px);
+    }
+}
+
+@media (max-width: 991px){
+    #blog .container{
+        max-width: 720px;
+    }
+}
+
+@media (max-width: 767px){
+    #blog .container{
+        max-width: 540px;
+    }
+
+    #blog .container .blog-content .blog-item{
+        flex: 0 0 100%;
+        margin: 0;
+    }
+}
+
+@media (max-width: 575px){
+    #blog .container{
+        max-width: 100%;
+        padding: 0 12px;
+    }
 }
