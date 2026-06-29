@@ -1,6 +1,11 @@
 /* pricing.css — 담당: 문예지 */
 /* 이 파일에만 작성하세요. 공통 변수는 var(--accent) 처럼 사용 */
 
+/* ===== 섹션 배경 ===== */
+#pricing {
+  background: var(--bg-light);
+}
+
 /* ===== 섹션 제목 ===== */
 #pricing .section-title h2 {
   font-size: 2rem;
