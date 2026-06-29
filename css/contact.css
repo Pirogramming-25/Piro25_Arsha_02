@@ -216,7 +216,7 @@
     #contact .container .row {
         flex-direction: column;
         gap: 1.5rem;
-=    }
+    }
 
     #contact .container .contact-info,
     #contact .container .contact-form {
