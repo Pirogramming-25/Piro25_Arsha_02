@@ -188,12 +188,17 @@
 
 #header .current-menu a img {
   transition: opacity 0.3s ease; 
-  filter: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(7495%) hue-rotate(271deg) brightness(100%) contrast(106%);
+  filter: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(7495%) hue-rotate(271deg) brightness(100%) contrast(106%)
+          drop-shadow(0.3px 0px 0px #ffffff) 
+          /* drop-shadow(-0.3px 0px 0px #ffffff)  */
+          drop-shadow(0px 0.3px 0px #ffffff) 
+          drop-shadow(0px -0.3px 0px #ffffff);
 }
 
 #header .prev-original,
 #header .next-original {
-  opacity: 0.6;
+  opacity: 0.7;
+  
 }
 
 
@@ -227,7 +232,8 @@
 
 #header .navigate a img {
   transition: opacity 0.3s ease; 
-  filter: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(7495%) hue-rotate(271deg) brightness(100%) contrast(106%);
+  filter: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(7495%) hue-rotate(271deg) brightness(100%) contrast(106%)
+          drop-shadow(0px -0.2px 0px #ffffff);
 }
 
 #header .share-original {
@@ -338,7 +344,6 @@
 
 /* 2. 내비게이션 메뉴 구역 (.navmenu) */
 #header .nav-bar .navmenu {
-  /* background-color: aqua; */
   margin-left: auto; 
   margin-right: 30px; 
 }
@@ -361,6 +366,11 @@
   align-items: center;
 }
 
+#header .nav-bar .cur-navmenu {
+  color: var(--accent);
+}
+
+
 /* 마우스를 올렸을 때 */
 #header .nav-bar .navmenu ul li a:hover {
   color: #47b2e4;
@@ -375,7 +385,22 @@
 .nav-bar .navmenu ul li.dropdown a img {
   width: 12px;
   height: auto;
+  transition: opacity 0.3s ease; 
+  filter: brightness(0) saturate(100%) invert(74%) sepia(50%) saturate(1497%) hue-rotate(174deg) brightness(96%) contrast(89%) brightness(500%);
+
+  filter: drop-shadow(0.1px 0px 0px currentColor) 
+  drop-shadow(0px 0.1px 0px currentColor) 
+  drop-shadow(0px -0.1px 0px currentColor);
 }
+/* 마우스 올렸을 때 */
+.navmenu .dropdown a:hover img {
+  filter: brightness(0) saturate(100%) invert(74%) sepia(50%) saturate(1497%) hue-rotate(174deg) brightness(9%) contrast(89%) brightness(1%);
+}
+
+
+
+
+
 
 /* 3. Get Started 버튼 스타일 */
 #header .nav-bar .btn-getstarted {
