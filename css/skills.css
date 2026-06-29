@@ -14,10 +14,13 @@
   width: 50%;
 }
 #skills .container .skills-right h2{
+  font-size: 2rem;
   margin: 10px;
 }
 #skills .container .skills-right p{
   margin: 10px;
+  color: var(--gray);
+  font-style: italic;
 }
 #skills .container .skills-right .skill-bar{
   margin: 10px 10px;
@@ -41,6 +44,8 @@
 }
 #skills .container .skills-right .skill-bar .progress .progressbar-wrap .progress-bar{
   background-color: var(--dark);
+  transform-origin: left;
+  animation: progress-fill 2s ease both;
 }
 #skills .container .skills-right .skill-bar .progress:nth-child(1) .progressbar-wrap .progress-bar{
   height: 100%;
@@ -68,6 +73,16 @@
     transform: translateY(0);
   }
 }
+/* progress bar 로딩 애니메이션*/
+@keyframes progress-fill{
+  from{
+    transform: scaleX(0);
+  }
+  to{
+    transform: scaleX(1);
+  }
+}
+/* 태블릿 사이즈에서 배치 vertical*/
 @media(max-width: 1024px) {
   #skills .container{
     flex-direction: column;
