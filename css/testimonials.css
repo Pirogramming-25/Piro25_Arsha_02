@@ -4,7 +4,7 @@
 }
 
 .testimonials .section-title h2 {
-  color: #37517e;
+  color: var(--dark);
 }
 
 .testimonials-slider {
@@ -59,7 +59,7 @@
 .testimonial-item h3 {
   font-size: 18px;
   font-weight: bold;
-  color: #37517e;
+  color: var(--dark);
   margin-bottom: 5px;
 }
 
