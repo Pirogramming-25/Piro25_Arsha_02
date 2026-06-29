@@ -1,3 +1,107 @@
 /* portfolio.css  —  담당: 이수빈 */
-/* 이 파일에만 작성하세요. 공통 변수는 var(--accent) 처럼 사용 */
 
+/* 섹션 제목 */
+#portfolio .section-title { text-align: center; margin-bottom: 30px; }
+#portfolio .section-title h2 {
+  font-size: 2rem; font-weight: 700; color: var(--dark);
+  position: relative; display: inline-block; padding-bottom: 10px;
+}
+#portfolio .section-title h2::before {   /* 회색 긴 선 */
+  content: ''; position: absolute; left: 50%; bottom: 0;
+  transform: translateX(-50%); width: 200px; height: 1px; background: #ddd;
+}
+#portfolio .section-title h2::after {    /* 파란 짧은 선 */
+  content: ""; position: absolute; left: 50%; bottom: 0;
+  transform: translateX(-50%); width: 50px; height: 3px; background: var(--accent);
+}
+#portfolio .section-title p { color: var(--gray); margin-top: 1rem; }
+
+/* 페이드 애니메이션 (필터마다 다른 이름 → 전환 시 전부 재생) */
+@keyframes fadeA { from { opacity:0; transform:translateY(20px) } to { opacity:1; transform:translateY(0) } }
+@keyframes fadeB { from { opacity:0; transform:translateY(20px) } to { opacity:1; transform:translateY(0) } }
+@keyframes fadeC { from { opacity:0; transform:translateY(20px) } to { opacity:1; transform:translateY(0) } }
+@keyframes fadeD { from { opacity:0; transform:translateY(20px) } to { opacity:1; transform:translateY(0) } }
+#filter-all:checked  ~ .portfolio-grid .portfolio-item { animation: fadeA 0.4s ease; }
+#filter-app:checked  ~ .portfolio-grid .portfolio-item { animation: fadeB 0.4s ease; }
+#filter-card:checked ~ .portfolio-grid .portfolio-item { animation: fadeC 0.4s ease; }
+#filter-web:checked  ~ .portfolio-grid .portfolio-item { animation: fadeD 0.4s ease; }
+
+/* 라디오 숨기기 */
+#portfolio .filter-input { display: none; }
+
+/* 필터 버튼 */
+#portfolio .portfolio-filters {
+  display: flex; justify-content: center; gap: 10px; margin-bottom: 30px;
+}
+#portfolio .portfolio-filters label {
+  cursor: pointer; padding: 6px 16px; border-radius: 50px;
+  font-size: 14px; color: var(--dark); font-weight: 500; transition: 0.3s;
+}
+#portfolio .portfolio-filters label:hover {
+  background: var(--accent); color: #fff;
+}
+#filter-all:checked  ~ .portfolio-filters label[for="filter-all"],
+#filter-app:checked  ~ .portfolio-filters label[for="filter-app"],
+#filter-card:checked ~ .portfolio-filters label[for="filter-card"],
+#filter-web:checked  ~ .portfolio-filters label[for="filter-web"] {
+  background: var(--accent); color: #fff;
+}
+
+/* 그리드 (masonry) */
+#portfolio .portfolio-grid { column-count: 3; column-gap: 15px; }
+#portfolio .portfolio-item {
+  break-inside: avoid; margin-bottom: 15px;
+  position: relative;        /* 정보박스 기준점 */
+  overflow: hidden;          /* 튀어나온 부분 숨김 */
+}
+#portfolio .portfolio-item img { width: 100%; height: auto; display: block; }
+
+/* hover 정보 박스 (반투명, 바닥에 딱) */
+#portfolio .portfolio-info {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  background: rgba(255, 255, 255, 0.85);   /* 반투명 흰색 */
+  padding: 15px 20px;
+  opacity: 0; transform: translateY(20px); transition: 0.3s;
+}
+#portfolio .portfolio-item:hover .portfolio-info {
+  opacity: 1; transform: translateY(0);
+}
+#portfolio .portfolio-info h4 { color: var(--dark); font-size: 18px; margin-bottom: 5px; }
+#portfolio .portfolio-info p { color: var(--gray); font-size: 14px; margin: 0; }
+
+/* hover 아이콘 (돋보기·링크) */
+#portfolio .portfolio-links {
+  position: absolute; right: 20px; bottom: 40px;
+  display: flex; gap: 10px;
+  opacity: 0; transition: 0.3s;
+
+}
+
+#portfolio .portfolio-links svg {
+  width: 34px;
+  height: 34px;
+  
+  color: #b3b3b3;
+}
+#portfolio .portfolio-item:hover .portfolio-links { opacity: 1; }
+#portfolio .portfolio-links a { color: var(--gray); display: flex; }
+#portfolio .portfolio-links a:hover { color: var(--accent); }
+
+/* 필터 동작 */
+#filter-app:checked  ~ .portfolio-grid .portfolio-item:not(.app),
+#filter-card:checked ~ .portfolio-grid .portfolio-item:not(.card),
+#filter-web:checked  ~ .portfolio-grid .portfolio-item:not(.web) {
+  display: none;
+}
+
+/* 반응형 */
+@media (max-width: 991px) { #portfolio .portfolio-grid { 
+  column-count: 2;
+  max-width: 700px;
+  margin: 0 auto;   
+} }
+@media (max-width: 767px) { #portfolio .portfolio-grid { 
+  column-count: 1;
+    max-width: 500px;     
+    margin: 0 auto;     } 
+  }
