@@ -27,7 +27,7 @@
     
     background-color: var(--gray);
     width: 160px;
-    height: 1.5px;
+    height: 1px;
 }
 
 #blog .container .section-title h2::after{
