@@ -1,15 +1,11 @@
 /* hero.css  —  담당: 신은아 */
 /* 이 파일에만 작성하세요. 공통 변수는 var(--accent) 처럼 사용 */
 
-/* 기본 스타일 초기화 */
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-} */
 
 
-/* --- Hero Section Styles --- */
+/* ========================================================= */
+/* --- 1. Hero Section --- */
+/* ========================================================= */
 #hero {
   width: 100%;
   min-height: 80vh;
@@ -112,15 +108,72 @@
     height: auto;
     animation: up-down 2s ease-in-out infinite alternate;
   }
-  
-  /* 이미지 둥둥 떠있는 애니메이션 효과 */
+
+  /* 이미지 애니메이션(위/아래 이동) */
   @keyframes up-down {
     0% {
       transform: translateY(0);
     }
     100% {
-      transform: translateY(-15spx);
+      transform: translateY(-15px);
     } 
+  }
+
+  /* 반응형 */
+  @media (max-width: 991px) {
+    #hero {
+      min-height: auto;
+      padding: 120px 0 60px 0;
+    }
+  
+    #hero .container {
+      flex-direction: column; 
+      gap: 40px;
+      padding: 0 24px;
+      align-items: flex-start; 
+    }
+  
+    .hero-letter {
+      padding-right: 0;
+      width: 100%;
+      text-align: left; 
+    }
+  
+    .hero-letter h1 {
+      margin-bottom: 15px;
+    }
+  
+    .hero-letter p {
+      margin-bottom: 30px;
+    }
+  
+    .hero-letter-bottom {
+      justify-content: flex-start; 
+      gap: 20px;
+      width: 100%;
+    }
+  
+    .hero-img {
+      width: 100%;
+      justify-content: center; 
+    }
+  
+    .hero-img img {
+      max-width: 90%; 
+      height: auto;
+    }
+  }
+  
+
+  @media (max-width: 637px) {
+    .hero-letter h1 {
+      font-size: 24px;
+      line-height: 32px;
+    }
+    .hero-letter-bottom {
+      flex-direction: row; 
+      gap: 15px;
+    }
   }
 
 
@@ -128,7 +181,10 @@
 
 
 
-/* --- Clients Section --- */
+/* ========================================================= */
+/* --- 2. Clients Section --- */
+/* ========================================================= */
+
 #clients {
     padding: 30px 0;
     background: #f3f5fa;
