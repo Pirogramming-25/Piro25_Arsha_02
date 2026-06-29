@@ -77,9 +77,10 @@
   border-radius: 8px;
   padding: 1.5rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
   opacity: 0;
   animation: fadeUp 0.8s ease forwards;
+  will-change: transform;
 }
 
 /* 1번째 줄 (1, 2번 카드) */
@@ -151,8 +152,8 @@
 
 /* ===== 호버 효과 ===== */
 .team-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transform: translateY(-5px) !important;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1) !important;
 }
 
 /* ===== 반응형 ===== */
