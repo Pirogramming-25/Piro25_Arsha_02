@@ -58,19 +58,38 @@
   appearance: none;
 }
 
-/* ===================================== */
+/* =========================== */
+/* 1. Header */
+/* =========================== */
 
 #header {
   width: 100%;
-  background-color: aqua;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  z-index: 9999; /* 다른 콘텐츠보다 항상 위에 보이도록 설정 */
+  z-index: 9999;
+
+  background-color: var(--dark);
+  transition: all 0.5s;
+
+
+  animation: scroll-darken linear both;
+  animation-timeline: scroll(root);
+  animation-range: 0px 150px;
 }
 
-.container {
+@keyframes scroll-darken {
+  from {
+    background-color: var(--dark); /* 스크롤 내리기 전 (밝음) */
+  }
+  to {
+    background-color: #3d4d6a; /* 스크롤 내린 후 (어두워짐) */
+    opacity: 0.92;
+  }
+}
+
+
+#header .container {
   width: 100%;
 }
 
@@ -245,6 +264,23 @@
 }
 
 
+@media (max-width: 1024px) {
+  .preview-devices {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .demo-bar .demo-logo {
+    display: none;
+  }
+}
+
+
+
+
+
+
 /* ===================================== */
 /* nav-bar 스타일 구역 (어두운 파란색 내비게이션) */
 /* ===================================== */
@@ -258,14 +294,21 @@
   justify-content: space-between;
   padding:0 300px;
 
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 20px 20px;
+  box-sizing: border-boxs;
+
+  background-color: transparent !important;
+
   animation: changeColor linear both;
-  animation-timeline: scroll(root); /* 브라우저 전체 스크롤을 감지 */
+  animation-timeline: scroll(root); 
   animation-range: 0px 150px;
 }
 
 @keyframes changeColor {
   to {
-    background-color: #3d4d6a; /* 2. 스크롤이 내려갔을 때: 어두운 파란색 */
+    background-color: #3d4d6a;
   }
 }
 
@@ -281,8 +324,8 @@
 /* 2. 내비게이션 메뉴 구역 (.navmenu) */
 #header .nav-bar .navmenu {
   /* background-color: aqua; */
-  margin-left: auto; /* 메뉴를 우측으로 밀어서 버튼 왼쪽에 정렬 */
-  margin-right: 30px; /* Get Started 버튼과의 간격 */
+  margin-left: auto; 
+  margin-right: 30px; 
 }
 
 .nav-bar .navmenu ul {
@@ -334,7 +377,53 @@
   justify-content: center;
 }
 
-/* 버튼 마우스 호버 효과 */
+
 #header .nav-bar .btn-getstarted:hover {
   background-color: #1ea8e7; 
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.mobile-nav-toggle {
+  display: none; 
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 6px;
+  padding: 5px;
+}
+
+
+.mobile-nav-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+
+
+@media (max-width: 1200px) {
+  .nav-bar {
+    padding: 20px 24px; 
+  }
+
+  .navmenu {
+    display: none !important;
+  }
+
+  .btn-getstarted {
+    display: block; 
+  }
+
+  .mobile-nav-toggle {
+    display: flex;
+  }
 }
