@@ -10,8 +10,9 @@
   --gray: #5e5e5e;        /* 본문 회색 */
   --bg-light: #f6f9fe;    /* 연한 배경 */
   --white: #ffffff;
-  --font-body: "Open Sans", sans-serif;
-  --font-heading: "Raleway", sans-serif;
+  --font-body: "Jost", sans-serif;
+  --font-heading: "Jost", sans-serif;
+
 }
 
 /* ---------- 리셋 ---------- */
