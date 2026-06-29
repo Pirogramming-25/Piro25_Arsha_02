@@ -137,6 +137,18 @@
   cursor: pointer;
 }
 
+#header .preview-devices ul li img {
+  filter: brightness(0) saturate(100%) invert(72%) sepia(17%) saturate(372%) hue-rotate(166deg) brightness(94%) contrast(91%);
+}
+
+/* 마우스 올렸을 때(hover) */
+#header .desktop-original:hover,
+#header .tablet-original:hover,
+#header .mobile-original:hover {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(7495%) hue-rotate(271deg) brightness(100%) contrast(106%);
+}
+
+
 /* --- [중앙 구역] 현재 메뉴명 및 좌우 화살표 --- */
 .current-menu {
   /* background-color: aquamarine; */
@@ -156,7 +168,11 @@
   filter: brightness(0) saturate(100%) invert(72%) sepia(17%) saturate(372%) hue-rotate(166deg) brightness(94%) contrast(91%);
 }
 
-/* 마우스 올렸을 때(hover): 빨간색(red) 톤으로 필터링 */
+
+
+
+
+/* 마우스 올렸을 때(hover) 필터링 */
 #header .prev-original:hover,
 #header .next-original:hover {
   filter: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(7495%) hue-rotate(271deg) brightness(100%) contrast(106%);;
@@ -190,7 +206,7 @@
   filter: brightness(0) saturate(100%) invert(72%) sepia(17%) saturate(372%) hue-rotate(166deg) brightness(94%) contrast(91%);
 }
 
-/* 마우스 올렸을 때(hover): 빨간색(red) 톤으로 필터링 */
+/* 마우스 올렸을 때(hover) */
 #header .share-original:hover {
   filter: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(7495%) hue-rotate(271deg) brightness(100%) contrast(106%);;
 }
