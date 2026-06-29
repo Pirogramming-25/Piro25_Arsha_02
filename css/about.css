@@ -5,7 +5,9 @@
   margin: 0 50px;
 }
 #about .container{
+  animation: fadeUp 0.8s ease;
 }
+/* span 사이 공백 없애기 위해 fontsize 0 */
 #about .container .about-title{
   text-align: center;
   font-size: 0;
@@ -44,7 +46,6 @@
   flex-shrink: 0;
   margin-right: 15px;
 }
-#about .container .about-container .about-first-paragraph p{}
 #about .container .about-container .about-first-paragraph ul{
   margin-top: 20px;
   margin-left: 20px
@@ -88,6 +89,7 @@
   transform: translateX(5px);
   content: url('../images/arrow-right-white.svg');
 }
+
 @keyframes fadeUp {
   from {
     opacity: 0;
