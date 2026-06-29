@@ -11,7 +11,7 @@
 #contact .container .section-title h2{
     color: var(--dark);
     font-size: 32px;
-    padding-bottom: 20px;
+    padding-bottom: 13px;
     margin-bottom: 20px;
     
     position: relative;
@@ -19,14 +19,16 @@
 
 #contact .container .section-title h2::before{
     content: "";
+    display: block;
     position: absolute;
     bottom: 1px;
     left: 50%;
     transform: translateX(-50%);
     
-    background-color: var(--gray);
-    width: 160px;
+    background-color: var(--gray-light);
+    width: 200px;
     height: 1px;
+    z-index: 0;
 }
 
 #contact .container .section-title h2::after{
@@ -41,6 +43,6 @@
     height: 3px;
 }
 
-#faq .container .section-title p{
+#contact .container .section-title p{
     color: var(--gray);
 }
