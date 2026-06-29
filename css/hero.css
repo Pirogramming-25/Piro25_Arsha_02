@@ -89,13 +89,15 @@
   }
   
   .hero-watchvideo:hover {
-    color: #47b2e4;
+    color: var(--accent);
   }
   
   .hero-watchvideo img {
-    width: 24px;
-    height: 24px;
+    width: 26px;
+    height: 26px;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(7495%) hue-rotate(271deg) brightness(100%) contrast(106%);
   }
+  
   
   /* 이미지 영역 */
   .hero-img {
