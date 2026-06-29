@@ -19,7 +19,7 @@
 }
 #about .container .about-title .about-first, .about-third{
   display: inline-block;
-  width: 60px;
+  width: 55px;
   height: 1px;
   background-color: var(--gray);
   /* background-color: #ccc; */
@@ -87,6 +87,16 @@
 #about .container .about-container button:hover img{
   transform: translateX(5px);
   content: url('../images/arrow-right-white.svg');
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 @media (max-width: 1024px){
   #about .container .about-container{
