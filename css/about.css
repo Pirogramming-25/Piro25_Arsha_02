@@ -1,3 +1,102 @@
 /* about.css  —  담당: 정현민 */
 /* 이 파일에만 작성하세요. 공통 변수는 var(--accent) 처럼 사용 */
 
+#about{
+  margin: 0 50px;
+}
+#about .container{
+}
+#about .container .about-title{
+  text-align: center;
+  font-size: 0;
+}
+#about .container .about-title h2{
+  text-align: center;
+  color: var(--dark);
+  /* color: #37517E; */
+  font-size: 2rem;
+  font-weight: 900;
+}
+#about .container .about-title .about-first, .about-third{
+  display: inline-block;
+  width: 60px;
+  height: 1px;
+  background-color: var(--gray);
+  /* background-color: #ccc; */
+  vertical-align: middle;
+}
+#about .container .about-title .about-second{
+  display: inline-block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--accent);
+  vertical-align: middle;
+}
+#about .container .about-title .about-first, .about-third, .about-second{
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+#about .container .about-container{
+  display: flex;
+}
+#about .container .about-container .about-first-paragraph{
+  flex: 1;
+  flex-shrink: 0;
+  margin-right: 15px;
+}
+#about .container .about-container .about-first-paragraph p{}
+#about .container .about-container .about-first-paragraph ul{
+  margin-top: 20px;
+  margin-left: 20px
+}
+#about .container .about-container .about-first-paragraph ul li{
+  list-style-image: url("../images/check2-circle.svg");
+  margin-bottom: 5px;
+}
+#about .container .about-container .about-second-paragraph{
+  flex: 1;
+  flex-shrink: 0;
+  margin-left: 15px;
+}
+#about .container .about-container .about-second-paragraph p{
+  display: block;
+}
+#about .container .about-container button{
+  margin-top: 15px;
+  display: block;
+  border: 2px solid var(--accent);
+  padding: 5px 20px;
+  border-radius: 5px;
+  color: var(--accent);
+  border-color: var(--accent);
+  font-weight: 600;
+  font-family: var(--font-body);
+}
+#about .container .about-container button:hover{
+  background-color: var(--accent);
+  color: var(--white);
+}
+#about .container .about-container button img{
+  width: 15px;
+  height: 15px;
+  vertical-align: -2px;
+  margin-left: 2px;
+  display: inline;
+  transition: transform 0.3s ease;
+}
+#about .container .about-container button:hover img{
+  transform: translateX(5px);
+  content: url('../images/arrow-right-white.svg');
+}
+@media (max-width: 1024px){
+  #about .container .about-container{
+    flex-direction: column;
+  }
+  #about .container .about-container .about-first-paragraph{
+    margin-right: 0;
+    margin-bottom: 40px;
+  }
+  #about .container .about-container .about-second-paragraph{
+    margin-left: 0;
+  }
+}
