@@ -1,12 +1,54 @@
 /* pricing.css — 담당: 문예지 */
 /* 이 파일에만 작성하세요. 공통 변수는 var(--accent) 처럼 사용 */
 
+/* ===== 섹션 배경 ===== */
+#pricing {
+  background: var(--bg-light);
+}
+
 /* ===== 섹션 제목 ===== */
+#pricing .section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
 #pricing .section-title h2 {
   font-size: 2rem;
   font-weight: 700;
-  color: #37517E;
+  color: var(--dark);
   font-family: "Jost", sans-serif;
+  position: relative;
+  padding-bottom: 13px;
+}
+
+#pricing .section-title h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--accent);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+#pricing .section-title h2::before {
+  content: '';
+  display: block;
+  width: 200px;
+  height: 1px;
+  background: var(--gray-light);
+  position: absolute;
+  bottom: 1px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+#pricing .section-title p {
+  margin-top: 30px;
 }
 
 /* ===== 카드 그리드 ===== */
@@ -17,6 +59,18 @@
   align-items: stretch;
 }
 
+/* ===== 등장 효과 ===== */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* ===== 카드 ===== */
 .pricing-card {
   background: var(--white);
@@ -24,7 +78,13 @@
   border-radius: 8px;
   padding: 60px 40px;
   box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
 }
+
+.pricing-card:nth-child(1) { animation-delay: 0.8s; }
+.pricing-card:nth-child(2) { animation-delay: 1s; }
+.pricing-card:nth-child(3) { animation-delay: 1.2s; }
 
 /* ===== 강조 카드 (Business) ===== */
 .pricing-card.featured {
@@ -35,7 +95,7 @@
 .pricing-plan {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #37517E;
+  color: var(--dark);
   font-family: "Jost", sans-serif;
   margin-bottom: 1rem;
 }

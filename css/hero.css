@@ -1,3 +1,248 @@
 /* hero.css  —  담당: 신은아 */
 /* 이 파일에만 작성하세요. 공통 변수는 var(--accent) 처럼 사용 */
 
+
+
+/* ========================================================= */
+/* --- 1. Hero Section --- */
+/* ========================================================= */
+#hero {
+  width: 100%;
+  min-height: 80vh;
+  background-color: var(--dark);
+  display: flex;
+  align-items: center;
+  padding: 120px 0px 60px;
+  position: relative;
+}
+
+
+#hero .container {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: row-reverse; 
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  
+  /* 텍스트 영역 */
+  .hero-letter {
+    flex: 1;
+    color: #ffffff;
+  }
+  
+  .hero-letter h1 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    margin-bottom: 15px;
+  }
+  
+  .hero-letter p {
+    font-size: 22px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 30px;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+  
+  /* 하단 버튼 영역 */
+  .hero-letter-bottom {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  /* Get Started 버튼 */
+  .hero-getstarted-btn {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s ease;
+  }
+  
+  .hero-getstarted-btn:hover {
+    background: #209dd8;
+  }
+  
+  /* Watch Video 버튼 */
+  .hero-watchvideo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .hero-watchvideo:hover {
+    color: var(--accent);
+  }
+  
+  .hero-watchvideo img {
+    width: 26px;
+    height: 26px;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(7495%) hue-rotate(271deg) brightness(100%) contrast(106%);
+  }
+  
+  
+  /* 이미지 영역 */
+  .hero-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero-img img {
+    max-width: 100%;
+    height: auto;
+    animation: up-down 2s ease-in-out infinite alternate;
+  }
+
+  /* 이미지 애니메이션(위/아래 이동) */
+  @keyframes up-down {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-15px);
+    } 
+  }
+
+  /* 반응형 */
+  @media (max-width: 991px) {
+    #hero {
+      min-height: auto;
+      padding: 120px 0 60px 0;
+    }
+  
+    #hero .container {
+      flex-direction: column; 
+      gap: 40px;
+      padding: 0 24px;
+      align-items: flex-start; 
+    }
+  
+    .hero-letter {
+      padding-right: 0;
+      width: 100%;
+      text-align: left; 
+    }
+  
+    .hero-letter h1 {
+      margin-bottom: 15px;
+    }
+  
+    .hero-letter p {
+      margin-bottom: 30px;
+    }
+  
+    .hero-letter-bottom {
+      justify-content: flex-start; 
+      gap: 20px;
+      width: 100%;
+    }
+  
+    .hero-img {
+      width: 100%;
+      justify-content: center; 
+    }
+  
+    .hero-img img {
+      max-width: 90%; 
+      height: auto;
+    }
+  }
+  
+
+  @media (max-width: 637px) {
+    .hero-letter h1 {
+      font-size: 24px;
+      line-height: 32px;
+    }
+    .hero-letter-bottom {
+      flex-direction: row; 
+      gap: 15px;
+    }
+  }
+
+
+
+
+
+
+/* ========================================================= */
+/* --- 2. Clients Section --- */
+/* ========================================================= */
+
+#clients {
+    padding: 30px 0;
+    background: #f3f5fa;
+    display: flex;
+    justify-content: center; /* 화면 중앙 정렬 */
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .swiper {
+    display: flex;
+    width: 1320px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .swiper-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 24px; 
+
+    animation: step-ticker 28s ease-in-out infinite;
+  }
+  
+  .swiper-slide {
+    width: 196px; 
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    width: 100%;
+    height: auto;
+    max-height: 40px;
+    object-fit: contain;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+  }
+  
+  @keyframes step-ticker {
+    0%, 11% { transform: translateX(0); }
+    12.5%, 23.5% { transform: translateX(-220px); }
+    25%, 36% { transform: translateX(-440px); }
+    37.5%, 48.5% { transform: translateX(-660px); }
+    50%, 61% { transform: translateX(-880px); }
+    62.5%, 73.5% { transform: translateX(-1100px); }
+    75%, 86% { transform: translateX(-1320px); }
+    87.5%, 98.5% { transform: translateX(-1540px); }
+    100% { transform: translateX(-1760px); }
+  }
+  
+  /* 마우스 올렸을 때 */
+  .swiper-slide img:hover {
+    transform: scale(1.1);
+    opacity: 1;
+
+  }
+  

@@ -6,12 +6,14 @@
 /* ---------- 공통 변수 ---------- */
 :root {
   --accent: #47b2e4;      /* 메인 파란색 */
-  --dark: #37423b;        /* 진한 텍스트 */
+  --dark: #37517E;;        /* 진한 텍스트 */
   --gray: #5e5e5e;        /* 본문 회색 */
   --bg-light: #f6f9fe;    /* 연한 배경 */
   --white: #ffffff;
-  --font-body: "Open Sans", sans-serif;
-  --font-heading: "Raleway", sans-serif;
+  --gray-light: #ccc; /*span용*/
+  --font-body: "Jost", sans-serif;
+  --font-heading: "Jost", sans-serif;
+
 }
 
 /* ---------- 리셋 ---------- */

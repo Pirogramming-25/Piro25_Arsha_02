@@ -1,3 +1,469 @@
 /* header.css  —  담당: 신은아 */
 /* 이 파일에만 작성하세요. 공통 변수는 var(--accent) 처럼 사용 */
 
+/* ===================================== */
+/* 0. css 초기화 */
+/* ===================================== */
+#header,
+#header * {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+#header article,
+#header aside,
+#header details,
+#header figcaption,
+#header figure,
+#header footer,
+#header header,
+#header hgroup,
+#header menu,
+#header nav,
+#header section {
+  display: block;
+}
+
+#header ol,
+#header ul {
+  list-style: none;
+}
+
+#header a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#header table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+#header button,
+#header input,
+#header select,
+#header textarea {
+  background: none;
+  border: none;
+  font: inherit;
+  color: inherit;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* =========================== */
+/* 1. Header */
+/* =========================== */
+
+#header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+
+  background-color: var(--dark);
+  transition: all 0.5s;
+
+
+  animation: scroll-darken linear both;
+  animation-timeline: scroll(root);
+  animation-range: 0px 150px;
+}
+
+@keyframes scroll-darken {
+  from {
+    background-color: var(--dark); 
+  }
+  to {
+    background-color: #3d4d6a;
+    opacity: 0.92;
+  }
+}
+
+
+#header .container {
+  width: 100%;
+}
+
+#header > .container {
+  max-width: none;
+  padding: 0;
+}
+
+.demo-bar {
+  background-color: #023b6d;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 32px;
+
+}
+
+/* 좌측 */
+#header .demo-bar .demo-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-left: 10px;
+}
+.demo-bar .demo-logo {
+  display: flex;
+  align-items: center;
+}
+
+.demo-bar .demo-logo img {
+  height: 24px;
+  display: block;
+  margin-left: 10px;
+}
+
+#header .preview-devices {
+  margin-left: 20px;
+}
+
+.preview-devices ul {
+  display: flex;
+  margin-left: 20px;
+  gap: 6px;
+}
+
+.preview-devices ul li {
+  display: flex;
+  align-items: center;
+  width: 22px;
+  height: 22px;
+}
+
+#header .preview-devices ul li img {
+  padding: 2px;
+  transform: scale(1.3);
+  transition: opacity 0.3s ease; 
+  
+  filter: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(7495%) hue-rotate(271deg) brightness(100%) contrast(106%);
+  
+}
+
+.preview-devices ul li:hover {
+  cursor: pointer;
+}
+
+#header .tablet-original,
+#header .mobile-original {
+  opacity: 0.6;
+}
+
+#header .desktop-original {
+  opacity: 1;
+}
+
+
+/* 마우스 올렸을 때(hover) */
+#header .desktop-original:hover,
+#header .tablet-original:hover,
+#header .mobile-original:hover {
+  opacity: 1;
+}
+
+
+/* --- [중앙 구역] 현재 메뉴명 및 좌우 화살표 --- */
+.current-menu {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.current-menu a {
+  display: flex;
+  align-items: center;
+}
+
+#header .current-menu a img {
+  transition: opacity 0.3s ease; 
+  filter: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(7495%) hue-rotate(271deg) brightness(100%) contrast(106%)
+          drop-shadow(0.3px 0px 0px #ffffff) 
+          /* drop-shadow(-0.3px 0px 0px #ffffff)  */
+          drop-shadow(0px 0.3px 0px #ffffff) 
+          drop-shadow(0px -0.3px 0px #ffffff);
+}
+
+#header .prev-original,
+#header .next-original {
+  opacity: 0.7;
+  
+}
+
+
+/* 마우스 올렸을 때(hover) 필터링 */
+#header .prev-original:hover,
+#header .next-original:hover {
+  opacity: 1;
+}
+
+
+#header .current-menu span {
+  color: white;
+  font-weight: 900;
+}
+
+
+/* --- [우측 구역] 공유 & 다운로드 버튼 --- */
+.navigate {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  height: 100%;
+}
+
+.navigate .btn-share {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  height: 100%;
+}
+
+#header .navigate a img {
+  transition: opacity 0.3s ease; 
+  filter: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(7495%) hue-rotate(271deg) brightness(100%) contrast(106%)
+          drop-shadow(0px -0.2px 0px #ffffff);
+}
+
+#header .share-original {
+  opacity: 0.6;
+}
+
+
+/* 마우스 올렸을 때(hover) */
+#header .share-original:hover {
+  opacity: 1;
+}
+
+#header .navigate .btn-download {
+  background-color: var(--accent);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-left: 15px;
+  padding: 0 14px;
+  font: var(--font-heading);
+  color: white;
+
+  transition: background-color 0.3s ease; 
+}
+
+
+#header .navigate .btn-download img {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(7495%) hue-rotate(271deg) brightness(100%) contrast(106%);;
+
+}
+
+#header .navigate .btn-download:hover {
+  background-color: #5bc5f7;
+}
+
+
+#header .navigate .btn-download span {
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+/* 반응형 */
+/* 1차: device 사라짐 */
+@media (max-width: 1024px) {
+  .preview-devices {
+    display: none;
+  }
+}
+/* 2차: 로고 사라지고 current menu는 좌측으로 이동 */
+@media (max-width: 768px) {
+  .demo-bar .demo-logo {
+    display: none;
+  }
+
+  #header .current-menu {
+    position: static !important;
+    transform: none !important;
+
+    margin-right: auto; 
+    padding-left: 10px; 
+  }
+}
+
+
+
+
+/* ===================================== */
+/* nav-bar 스타일 구역 (어두운 파란색 내비게이션) */
+/* ===================================== */
+
+#header .nav-bar {
+  background-color: var(--dark);
+  width: 100%;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:0 300px;
+
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 20px 20px;
+  box-sizing: border-boxs;
+
+  background-color: transparent !important;
+
+  animation: changeColor linear both;
+  animation-timeline: scroll(root); 
+  animation-range: 0px 150px;
+}
+
+@keyframes changeColor {
+  to {
+    background-color: #3d4d6a;
+  }
+}
+
+
+/* 1. 로고 스타일 */
+#header h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+}
+
+
+/* 2. 내비게이션 메뉴 구역 (.navmenu) */
+#header .nav-bar .navmenu {
+  margin-left: auto; 
+  margin-right: 30px; 
+}
+
+.nav-bar .navmenu ul {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-bar .navmenu ul li {
+  color: white;
+}
+
+#header .nav-bar .navmenu ul li a {
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+}
+
+#header .nav-bar .cur-navmenu {
+  color: var(--accent);
+}
+
+
+/* 마우스를 올렸을 때 */
+#header .nav-bar .navmenu ul li a:hover {
+  color: #47b2e4;
+  transition: color 0.4s ease;
+}
+
+
+.nav-bar .navmenu ul li.dropdown a {
+  gap: 5px;
+}
+
+.nav-bar .navmenu ul li.dropdown a img {
+  width: 12px;
+  height: auto;
+  transition: opacity 0.3s ease; 
+  filter: brightness(0) saturate(100%) invert(74%) sepia(50%) saturate(1497%) hue-rotate(174deg) brightness(96%) contrast(89%) brightness(500%);
+
+  filter: drop-shadow(0.1px 0px 0px currentColor) 
+  drop-shadow(0px 0.1px 0px currentColor) 
+  drop-shadow(0px -0.1px 0px currentColor);
+}
+/* 마우스 올렸을 때 */
+.navmenu .dropdown a:hover img {
+  filter: brightness(0) saturate(100%) invert(74%) sepia(50%) saturate(1497%) hue-rotate(174deg) brightness(9%) contrast(89%) brightness(1%);
+}
+
+
+
+
+
+
+/* 3. Get Started 버튼 스타일 */
+#header .nav-bar .btn-getstarted {
+  color: #ffffff;
+  background-color: var(--accent);
+  font-size: 15px;
+  font-weight: 200;
+  padding: 6px 28px;
+  border-radius: 50px; 
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+#header .nav-bar .btn-getstarted:hover {
+  background-color: #1ea8e7; 
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.mobile-nav-toggle {
+  display: none; 
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 6px;
+  padding: 5px;
+}
+
+
+.mobile-nav-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+
+
+@media (max-width: 1200px) {
+  .nav-bar {
+    padding: 20px 24px; 
+  }
+
+  .navmenu {
+    display: none !important;
+  }
+
+  .btn-getstarted {
+    display: block; 
+  }
+
+  .mobile-nav-toggle {
+    display: flex;
+  }
+}
