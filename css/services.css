@@ -81,8 +81,8 @@
     transform: translateY(0);
   }
 }
-/* 태블릿사이즈에서 카드 2X2로 배치*/
-@media(max-width: 1024px){
+
+@media(max-width: 1199px){
   #services .container .services-cardlist{
     flex-wrap: wrap;
     gap: 30px;
@@ -92,7 +92,7 @@
   }
 }
 /* 모바일사이즈에서 카드 vertical 배치*/
-@media(max-width: 768px){
+@media(max-width: 767px){
     #services .container .services-cardlist{
     flex-wrap: wrap;
     gap: 15px;
