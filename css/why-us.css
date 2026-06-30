@@ -118,7 +118,7 @@
     transform: translateY(0);
   }
 }
-@media(max-width: 1024px){
+@media(max-width: 991px){
   #why-us .container{
     flex-direction: column-reverse;
     align-items: center;

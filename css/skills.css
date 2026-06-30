@@ -83,7 +83,7 @@
   }
 }
 /* 태블릿 사이즈에서 배치 vertical*/
-@media(max-width: 1024px) {
+@media(max-width: 991px) {
   #skills .container{
     flex-direction: column;
   }
